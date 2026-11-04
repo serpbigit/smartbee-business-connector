@@ -1,0 +1,40 @@
+{
+  "name": "smartbee-business-connector",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.0.0",
+    "typescript": "^5.6.2",
+    "vitest": "^3.2.7",
+    "wrangler": "^4.0.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "SMARTBEE_CLIENT_ID": {
+        "description": "מ-SmartBee: ה-API client id שקיבלתם במייל מ-SmartBee."
+      },
+      "SMARTBEE_PASSWORD": {
+        "description": "מ-SmartBee: סיסמת ה-API שקיבלתם במייל מ-SmartBee."
+      },
+      "PROVIDERUSERTOKEN": {
+        "description": "מ-SmartBee: ה-provider user token שקיבלתם במייל מ-SmartBee."
+      },
+      "MCP_TOKEN": {
+        "description": "סיסמה חדשה וארוכה שאתם ממציאים (32 תווים ומעלה, ממחולל הסיסמאות של הדפדפן). היא נכנסת לכתובת החיבור ל-Claude, ולכן שומרים אותה במנהל סיסמאות."
+      },
+      "SMARTBEE_ENV": {
+        "description": "להשאיר prod."
+      },
+      "SMARTBEE_FORCE_DRAFT": {
+        "description": "1 בבדיקה הראשונה (רק טיוטות, שום דבר לא נשלח). אחרי שהבדיקה עברה משנים ל-0."
+      }
+    }
+  }
+}
